@@ -1,3 +1,4 @@
+
 const errorLabel = document.querySelector("label[for='error-msg']")
 const latInp = document.querySelector("#latitude")
 const lonInp = document.querySelector("#longitude")
@@ -6,27 +7,19 @@ const airQualityStat = document.querySelector(".air-quality-status")
 const srchBtn = document.querySelector(".search-btn")
 const componentsEle = document.querySelectorAll(".component-val")
 
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'e8f4eb3ee3msh695dbb92ef2b09bp183f4fjsn37e2c536d7c7',
-		'X-RapidAPI-Host': 'air-quality.p.rapidapi.com'
-	}
-};
-
-fetch('https://air-quality.p.rapidapi.com/history/airquality?lon=-78.638&lat=35.779', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+const appId = "cfe29cbe0bdade1f831edb7df7e734a0"
+const link = "https://api.openweathermap.org/data/2.5/air_pollution"	// API end point
 
 const getUserLocation = () => {
+	// Get user Location
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(onPositionGathered, onPositionGatherError)
 	} else {
 		onPositionGatherError({ message: "Can't Access your location. Please enter your co-ordinates" })
 	}
 }
- const onPositionGathered = (pos) => {
+
+const onPositionGathered = (pos) => {
 	let lat = pos.coords.latitude.toFixed(4), lon = pos.coords.longitude.toFixed(4)
 
 	// Set values of Input for user to know
@@ -59,7 +52,7 @@ const setValuesOfAir = airData => {
 
 	switch (aqi) {
 		case 1:
-            airStat = "Good"
+			airStat = "Good"
 			color = "rgb(19, 201, 28)"
 			break
 			case 2:
