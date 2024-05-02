@@ -1,0 +1,46 @@
+
+body {
+	background-image: url('./bg.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 100vh;
+  }
+  
+  .neon-heading {
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 50px;
+	color: rgb(17, 0, 255);
+	text-shadow: 0px 0px 20px #0ff, 0px 0px 20px #0ff, 0px 0px 30px #0ff, 0px 0px 40px #0ff;
+	animation: neon 1.5s ease-in-out infinite alternate;
+  }
+  
+  .neon-button {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 20px;
+	text-transform: uppercase;
+	color: #fff;
+	text-shadow: 0px 0px 10px #fff, 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff;
+	background-color: #00f;
+	box-shadow: 0px 0px 10px #00f;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	animation: neon 1.5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes neon {
+	from {
+	  box-shadow: 0px 0px 10px #00f;
+	  text-shadow: 0px 0px 10px #fff, 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff;
+	}
+	to {
+	  box-shadow: 0px 0px 20px #0ff;
+	  text-shadow: 0px 0px 10px #0ff, 0px 0px 20px #0ff, 0px 0px 30px #0ff, 0px 0px 40px #0ff;
+	}
+  }
